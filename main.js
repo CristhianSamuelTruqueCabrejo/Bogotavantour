@@ -182,7 +182,7 @@
   if (btnWA) {
     btnWA.addEventListener('click', () => {
       if (!pendingData) return;
-      const url = 'https://wa.me/573000000000?text=' + encodeURIComponent(pendingData.msgTexto);
+      const url = 'https://wa.me/573153934336?text=' + encodeURIComponent(pendingData.msgTexto);
       window.open(url, '_blank');
       closeChannelModal();
     });
@@ -195,7 +195,7 @@
         ? 'Solicitud de cotización · ' + pendingData.nombre
         : 'Quote request · ' + pendingData.nombre;
       const body = pendingData.msgTexto.replace(/\*/g, ''); // quitar formato WA
-      const url = 'mailto:reservas@vantourbogota.com'
+      const url = 'mailto:vantourbogota@gmail.com'
         + '?subject=' + encodeURIComponent(subject)
         + '&body='    + encodeURIComponent(body);
       window.location.href = url;
