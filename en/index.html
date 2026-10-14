@@ -83,11 +83,12 @@
   <script src="/analytics.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- NAV -->
   <nav class="nav" id="nav">
     <a class="nav-logo" href="#inicio">Van<span>Tour</span> <em>Bogotá</em></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
@@ -100,6 +101,7 @@
     </div>
   </nav>
 
+  <main id="main">
   <!-- HERO -->
   <section class="hero" id="inicio">
     <div class="hero-content">
@@ -111,8 +113,9 @@
       <p>Premium tourist and executive van transport. Routes across Colombia, El Dorado airport transfers, private tours and corporate service for groups of any size.</p>
       <div class="hero-actions">
         <a href="#contacto" class="btn-primary">Request a quote</a>
-        <a href="#servicios" class="btn-secondary">Our services</a>
+        <a href="https://wa.me/573153934336" target="_blank" rel="noopener" class="btn-whatsapp" data-track="hero">Chat on WhatsApp</a>
       </div>
+      <!-- TODO: confirmar con datos reales las cifras (años, clientes, destinos) antes de publicar -->
       <div class="hero-stats">
         <div class="stat">
           <span class="stat-num">8+</span>
@@ -156,31 +159,36 @@
         <h2>Services tailored for you</h2>
         <p>From executive transfers to full tourist tours. We adapt every service to your group's needs.</p>
       </div>
+      <!-- TODO: confirmar precios "desde" y el tiempo de respuesta con la operación real -->
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">✈</div>
+          <div class="service-icon" aria-hidden="true">✈</div>
           <h3>Airport transfer</h3>
           <p>Pick-up and drop-off at El Dorado. Guaranteed punctuality, flight tracking included. Available 24/7.</p>
           <span class="service-price">From $30 USD</span>
+          <a class="card-link" href="#contacto" data-service="aeropuerto">Get a quote →</a>
         </div>
         <div class="service-card featured">
           <div class="service-badge">Most requested</div>
-          <div class="service-icon">🏛</div>
+          <div class="service-icon" aria-hidden="true">🏛</div>
           <h3>Tourist tours</h3>
           <p>Trips to Villa de Leyva, Guatapé, Coffee Region, Guatavita Lake and more. Optional bilingual guide.</p>
           <span class="service-price">From $90 USD</span>
+          <a class="card-link" href="#contacto" data-service="tour">Get a quote →</a>
         </div>
         <div class="service-card">
-          <div class="service-icon">💼</div>
+          <div class="service-icon" aria-hidden="true">💼</div>
           <h3>Executive transport</h3>
           <p>Corporate meetings, business events and assigned driver per day. Discretion and punctuality guaranteed.</p>
           <span class="service-price">Hourly or full day</span>
+          <a class="card-link" href="#contacto" data-service="ejecutivo">Get a quote →</a>
         </div>
         <div class="service-card">
-          <div class="service-icon">👥</div>
+          <div class="service-icon" aria-hidden="true">👥</div>
           <h3>Large groups</h3>
           <p>Verified vehicle network in Bogotá. We coordinate convoys for groups of 15 to 100+ people.</p>
           <span class="service-price">Custom quote</span>
+          <a class="card-link" href="#contacto" data-service="grupo">Get a quote →</a>
         </div>
       </div>
     </div>
@@ -197,7 +205,7 @@
       <div class="fleet-grid">
         <div class="fleet-card">
           <div class="fleet-img">
-            <span class="fleet-emoji">🚐</span>
+            <span class="fleet-emoji" aria-hidden="true">🚐</span>
             <span class="fleet-own-badge">Owned</span>
           </div>
           <div class="fleet-info">
@@ -210,7 +218,7 @@
         </div>
         <div class="fleet-card">
           <div class="fleet-img">
-            <span class="fleet-emoji">🚌</span>
+            <span class="fleet-emoji" aria-hidden="true">🚌</span>
             <span class="fleet-own-badge">Owned</span>
           </div>
           <div class="fleet-info">
@@ -223,7 +231,7 @@
         </div>
         <div class="fleet-card fleet-network">
           <div class="fleet-img">
-            <span class="fleet-emoji">🚐</span>
+            <span class="fleet-emoji" aria-hidden="true">🚐</span>
             <span class="fleet-own-badge network">Verified network</span>
           </div>
           <div class="fleet-info">
@@ -247,54 +255,54 @@
         <p>Departures from Bogotá to the most sought-after destinations by national and international tourists.</p>
       </div>
       <div class="destinations-grid">
-        <div class="dest-card">
-          <div class="dest-img">🏛</div>
+        <a class="dest-card" href="#contacto" data-route="Villa de Leyva">
+          <div class="dest-img" aria-hidden="true">🏛</div>
           <div class="dest-info">
             <h3>Villa de Leyva</h3>
             <p>~3 h from Bogotá · colonial town</p>
             <span class="dest-price">From $90 USD</span>
           </div>
-        </div>
-        <div class="dest-card">
-          <div class="dest-img">💧</div>
+        </a>
+        <a class="dest-card" href="#contacto" data-route="Guatapé">
+          <div class="dest-img" aria-hidden="true">💧</div>
           <div class="dest-info">
             <h3>Guatapé</h3>
             <p>~8 h round trip · El Peñol included</p>
             <span class="dest-price">From $120 USD</span>
           </div>
-        </div>
-        <div class="dest-card">
-          <div class="dest-img">☕</div>
+        </a>
+        <a class="dest-card" href="#contacto" data-route="Eje Cafetero">
+          <div class="dest-img" aria-hidden="true">☕</div>
           <div class="dest-info">
             <h3>Eje Cafetero</h3>
             <p>~5 h · Salento, Filandia, jeep</p>
             <span class="dest-price">From $155 USD</span>
           </div>
-        </div>
-        <div class="dest-card">
-          <div class="dest-img">🌿</div>
+        </a>
+        <a class="dest-card" href="#contacto" data-route="Laguna de Guatavita">
+          <div class="dest-img" aria-hidden="true">🌿</div>
           <div class="dest-info">
             <h3>Laguna de Guatavita</h3>
             <p>~2 h from Bogotá · El Dorado legend</p>
             <span class="dest-price">From $55 USD</span>
           </div>
-        </div>
-        <div class="dest-card">
-          <div class="dest-img">🌋</div>
+        </a>
+        <a class="dest-card" href="#contacto" data-route="Nevado del Ruiz">
+          <div class="dest-img" aria-hidden="true">🌋</div>
           <div class="dest-info">
             <h3>Nevado del Ruiz</h3>
             <p>~4 h · natural park, snow</p>
             <span class="dest-price">From $130 USD</span>
           </div>
-        </div>
-        <div class="dest-card dest-custom" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">
-          <div class="dest-img">＋</div>
+        </a>
+        <a class="dest-card dest-custom" href="#contacto">
+          <div class="dest-img" aria-hidden="true">＋</div>
           <div class="dest-info">
             <h3>Custom destination</h3>
             <p>Tell us where you want to go</p>
             <span class="dest-price">Get a quote →</span>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -310,21 +318,21 @@
           <p>We work with travel agencies, private sector companies and independent national and international tourists. Our goal: make your journey the best part of the destination.</p>
           <div class="about-values">
             <div class="value-item">
-              <span class="value-icon">🕐</span>
+              <span class="value-icon" aria-hidden="true">🕐</span>
               <div>
                 <strong>Punctuality</strong>
                 <span>We arrive before you do</span>
               </div>
             </div>
             <div class="value-item">
-              <span class="value-icon">🔒</span>
+              <span class="value-icon" aria-hidden="true">🔒</span>
               <div>
                 <strong>Safety</strong>
                 <span>Insured and inspected vehicles</span>
               </div>
             </div>
             <div class="value-item">
-              <span class="value-icon">🌐</span>
+              <span class="value-icon" aria-hidden="true">🌐</span>
               <div>
                 <strong>Bilingual</strong>
                 <span>Service in Spanish and English</span>
@@ -332,9 +340,10 @@
             </div>
           </div>
         </div>
+        <!-- TODO: reemplazar por reseñas reales y verificables (nombre y permiso del cliente) -->
         <div class="about-reviews">
           <div class="review-card">
-            <div class="stars">★★★★★</div>
+            <div class="stars" aria-hidden="true">★★★★★</div>
             <p>"Excelente servicio para nuestro grupo corporativo. Puntuales, el vehículo impecable y el conductor muy profesional."</p>
             <div class="review-author">
               <div class="avatar">MC</div>
@@ -345,7 +354,7 @@
             </div>
           </div>
           <div class="review-card">
-            <div class="stars">★★★★★</div>
+            <div class="stars" aria-hidden="true">★★★★★</div>
             <p>"We booked a private van tour to Villa de Leyva. Absolutely seamless experience, great English communication throughout."</p>
             <div class="review-author">
               <div class="avatar">JR</div>
@@ -356,7 +365,7 @@
             </div>
           </div>
           <div class="review-card">
-            <div class="stars">★★★★★</div>
+            <div class="stars" aria-hidden="true">★★★★★</div>
             <p>"Viajamos 12 personas al Eje Cafetero. Todo perfecto: vehículo cómodo, WiFi funcionando y muy buen precio."</p>
             <div class="review-author">
               <div class="avatar">LG</div>
@@ -381,14 +390,14 @@
           <p class="light">We respond in under 2 hours. Available every day from 6 am to 10 pm.</p>
           <div class="contact-items">
             <a class="contact-item" href="https://wa.me/573153934336" target="_blank" rel="noopener">
-              <span class="contact-icon">💬</span>
+              <span class="contact-icon" aria-hidden="true">💬</span>
               <div>
                 <span class="ci-label">WhatsApp</span>
                 <span class="ci-value">+57 3153934336</span>
               </div>
             </a>
             <a class="contact-item" href="mailto:vantourbogota@gmail.com">
-              <span class="contact-icon">✉</span>
+              <span class="contact-icon" aria-hidden="true">✉</span>
               <div>
                 <span class="ci-label">Email</span>
                 <span class="ci-value">vantourbogota@gmail.com</span>
@@ -406,14 +415,14 @@
               </div>
             </a>
             <div class="contact-item">
-              <span class="contact-icon">📍</span>
+              <span class="contact-icon" aria-hidden="true">📍</span>
               <div>
                 <span class="ci-label">Base of operations</span>
                 <span class="ci-value">Bogotá D.C., Colombia</span>
               </div>
             </div>
             <div class="contact-item">
-              <span class="contact-icon">🕐</span>
+              <span class="contact-icon" aria-hidden="true">🕐</span>
               <div>
                 <span class="ci-label">Opening hours</span>
                 <span class="ci-value">Mon – Sun · 6 am – 10 pm</span>
@@ -425,16 +434,16 @@
           <div class="form-row">
             <div class="form-group">
               <label for="nombre">Full name</label>
-              <input type="text" id="nombre" name="nombre" required placeholder="John Smith" />
+              <input type="text" id="nombre" name="nombre" autocomplete="name" required aria-required="true" placeholder="John Smith" />
             </div>
             <div class="form-group">
               <label for="contacto_val">Email or WhatsApp</label>
-              <input type="text" id="contacto_val" name="contacto_val" required placeholder="+57 3153934336" />
+              <input type="text" id="contacto_val" name="contacto_val" autocomplete="email" required aria-required="true" placeholder="+57 3153934336" />
             </div>
           </div>
           <div class="form-group">
             <label for="servicio">Service type</label>
-            <select id="servicio" name="servicio" required>
+            <select id="servicio" name="servicio" required aria-required="true">
               <option value="">Select...</option>
               <option value="aeropuerto">Airport transfer</option>
               <option value="ejecutivo">Executive transport</option>
@@ -449,7 +458,7 @@
             </div>
             <div class="form-group">
               <label for="personas">Number of people</label>
-              <input type="number" id="personas" name="personas" min="1" max="100" placeholder="4" />
+              <input type="number" id="personas" inputmode="numeric" name="personas" min="1" max="100" placeholder="4" />
             </div>
           </div>
           <div class="form-group">
@@ -460,14 +469,17 @@
             <label for="mensaje">Additional message (optional)</label>
             <textarea id="mensaje" name="mensaje" rows="3" placeholder="..."></textarea>
           </div>
-          <button type="submit" class="btn-submit">Continue →</button>
-          <div class="form-success" id="formSuccess">
+          <p class="form-error" id="formError" role="alert" hidden>Please enter your name, a way to reach you and the service type.</p>
+          <button type="submit" class="btn-submit">Request a quote →</button>
+          <div class="form-success" id="formSuccess" role="status" aria-live="polite">
             <span>✓ Request sent. We'll contact you in under 2 hours.</span>
           </div>
         </form>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -493,7 +505,7 @@
         </div>
         <div class="footer-links">
           <strong>Contact</strong>
-          <a href="https://wa.me/573153934336" target="_blank">WhatsApp</a>
+          <a href="https://wa.me/573153934336" target="_blank" rel="noopener">WhatsApp</a>
           <a href="mailto:vantourbogota@gmail.com">vantourbogota@gmail.com</a>
           <a href="#contacto">Request a quote</a>
         </div>
@@ -512,7 +524,7 @@
 
   <!-- MODAL SELECCIÓN DE CANAL -->
   <div class="channel-overlay" id="channelOverlay" role="dialog" aria-modal="true" aria-labelledby="channelTitle">
-    <div class="channel-modal">
+    <div class="channel-modal" tabindex="-1">
       <button class="channel-close" id="channelClose" aria-label="Close">✕</button>
       <div class="channel-header">
         <div class="channel-check">✓</div>

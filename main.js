@@ -57,10 +57,13 @@
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
       const open = navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', open);
+      navToggle.setAttribute('aria-expanded', String(open));
     });
     navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => navLinks.classList.remove('open'));
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 
@@ -73,9 +76,7 @@
       if (entry.isIntersecting) {
         const id = entry.target.id;
         navAnchors.forEach(a => {
-          a.style.color = a.getAttribute('href') === '#' + id
-            ? 'rgba(255,255,255,0.95)'
-            : 'rgba(255,255,255,0.65)';
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
         });
       }
     });
@@ -98,7 +99,9 @@
     });
   }, { threshold: 0.1 });
 
-  revealEls.forEach(el => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduceMotion) revealEls.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(18px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -108,6 +111,25 @@
   /* ---- CONTACT FORM ---- */
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
+  const formError = document.getElementById('formError');
+
+  // No permitir fechas pasadas
+  if (form && form.fecha) {
+    const t = new Date();
+    form.fecha.min = t.getFullYear() + '-' + String(t.getMonth() + 1).padStart(2, '0') + '-' + String(t.getDate()).padStart(2, '0');
+  }
+
+  // Las tarjetas de servicio y destino llevan al formulario con los datos ya elegidos
+  document.querySelectorAll('[data-service], [data-route]').forEach(el => {
+    el.addEventListener('click', () => {
+      if (!form) return;
+      if (el.dataset.service) form.servicio.value = el.dataset.service;
+      if (el.dataset.route) {
+        form.servicio.value = 'tour';
+        form.ruta.value = 'Bogotá → ' + el.dataset.route;
+      }
+    });
+  });
 
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -122,7 +144,13 @@
       const personas = form.personas.value;
       const mensaje  = form.mensaje.value.trim();
 
-      if (!nombre || !contacto || !servicio) {
+      const missing = [['nombre', nombre], ['contacto_val', contacto], ['servicio', servicio]]
+        .filter(f => !f[1]).map(f => form[f[0]]);
+      form.querySelectorAll('[aria-invalid]').forEach(el => el.removeAttribute('aria-invalid'));
+      if (formError) formError.hidden = missing.length === 0;
+      if (missing.length) {
+        missing.forEach(el => el.setAttribute('aria-invalid', 'true'));
+        missing[0].focus();
         shakeForm();
         return;
       }
@@ -154,10 +182,14 @@
   const btnWA     = document.getElementById('chWhatsApp');
   const btnEmail  = document.getElementById('chEmail');
 
+  let lastFocus = null;
+
   function openChannelModal() {
     if (!overlay) return;
+    lastFocus = document.activeElement;
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
+    if (btnWA) btnWA.focus();
   }
 
   function closeChannelModal() {
@@ -165,11 +197,21 @@
     overlay.classList.remove('open');
     document.body.style.overflow = '';
     pendingData = null;
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
   if (btnClose)  btnClose.addEventListener('click', closeChannelModal);
   if (overlay)   overlay.addEventListener('click', e => { if (e.target === overlay) closeChannelModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeChannelModal(); });
+  document.addEventListener('keydown', e => {
+    if (!overlay || !overlay.classList.contains('open')) return;
+    if (e.key === 'Escape') { closeChannelModal(); return; }
+    if (e.key !== 'Tab') return;
+    // Mantener el foco dentro del modal
+    const f = overlay.querySelectorAll('button');
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
 
   if (btnWA) {
     btnWA.addEventListener('click', () => {
@@ -252,12 +294,5 @@
     }
   `;
   document.head.appendChild(style);
-
-  /* ---- SMOOTH DEST CARDS ---- */
-  document.querySelectorAll('.dest-card').forEach(card => {
-    card.addEventListener('click', () => {
-      document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
-    });
-  });
 
 })();
