@@ -3,11 +3,13 @@
 (function () {
   'use strict';
 
-  /* ---- LANGUAGE SYSTEM ---- */
+  /* ---- LANGUAGE ----
+     Cada idioma tiene su propia URL (/ = ES, /en/ = EN) con el texto ya en el HTML.
+     La detección automática solo actúa en la primera visita a la raíz. */
+  const lang = document.documentElement.lang === 'en' ? 'en' : 'es';
+  const isBot = /bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent) || navigator.webdriver;
 
   function detectBrowserLang() {
-    // navigator.languages devuelve array ordenado por preferencia del usuario
-    // ej: ['es-CO', 'es', 'en-US'] o ['en-US', 'en']
     const langs = navigator.languages || [navigator.language || 'en'];
     for (const l of langs) {
       if (l.toLowerCase().startsWith('es')) return 'es';
@@ -15,40 +17,28 @@
     return 'en';
   }
 
-  // Si el usuario cambió manualmente el idioma alguna vez, respetar esa elección.
-  // Si no, detectar automáticamente por el navegador.
-  const savedLang = localStorage.getItem('vt-lang');
-  let lang = savedLang || detectBrowserLang();
-
-  function applyLang() {
-    document.querySelectorAll('[data-es]').forEach(el => {
-      const txt = el.getAttribute('data-' + lang);
-      if (!txt) return;
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.placeholder = txt;
-      } else if (el.tagName === 'OPTION') {
-        el.textContent = txt;
-      } else {
-        el.innerHTML = txt;
-      }
-    });
-    // Muestra la bandera+código del idioma AL QUE se puede cambiar
-    const btn = document.getElementById('langBtn');
-    if (btn) btn.textContent = lang === 'es' ? '🇺🇸 EN' : '🇨🇴 ES';
-    document.documentElement.lang = lang;
+  function getSavedLang() {
+    try { return localStorage.getItem('vt-lang'); } catch (_) { return null; }
   }
 
-  const langBtn = document.getElementById('langBtn');
+  function saveLang(l) {
+    try { localStorage.setItem('vt-lang', l); } catch (_) {}
+  }
+
+  // La elección manual (botón de idioma) tiene prioridad sobre la detección del navegador
+  const langBtn = document.getElementById('langBtn') || document.querySelector('.lang-toggle');
   if (langBtn) {
-    langBtn.addEventListener('click', () => {
-      lang = lang === 'es' ? 'en' : 'es';
-      // Guardar preferencia manual — tiene prioridad sobre detección automática
-      localStorage.setItem('vt-lang', lang);
-      applyLang();
-    });
+    langBtn.addEventListener('click', () => saveLang(langBtn.dataset.lang));
   }
 
-  applyLang();
+  const saved = getSavedLang();
+  if (!isBot) {
+    const wanted = saved || detectBrowserLang();
+    const path = location.pathname.replace(/index\.html$/, '');
+    if (wanted === 'en' && lang === 'es' && path === '/') {
+      location.replace('/en/' + location.search + location.hash);
+    }
+  }
 
   /* ---- NAV SCROLL ---- */
   const nav = document.getElementById('nav');
@@ -163,7 +153,6 @@
 
   function openChannelModal() {
     if (!overlay) return;
-    applyLang(); // actualizar textos bilingüe dentro del modal
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -191,9 +180,7 @@
   if (btnEmail) {
     btnEmail.addEventListener('click', () => {
       if (!pendingData) return;
-      const subject = lang === 'es'
-        ? 'Solicitud de cotización · ' + pendingData.nombre
-        : 'Quote request · ' + pendingData.nombre;
+      const subject = TXT.subject + pendingData.nombre;
       const body = pendingData.msgTexto.replace(/\*/g, ''); // quitar formato WA
       const url = 'mailto:vantourbogota@gmail.com'
         + '?subject=' + encodeURIComponent(subject)
@@ -204,56 +191,40 @@
   }
 
   /* ---- UTILIDADES ---- */
-  function copyToClipboard(text) {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(text).catch(() => {});
-    } else {
-      const ta = document.createElement('textarea');
-      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
-      document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); } catch(_) {}
-      document.body.removeChild(ta);
+  const TXT = {
+    es: {
+      svc: { aeropuerto: 'Traslado aeropuerto', ejecutivo: 'Transporte ejecutivo', tour: 'Tour turístico', grupo: 'Grupo grande (15+ personas)' },
+      hi: '¡Hola! Quiero solicitar una cotización.', name: 'Nombre', contact: 'Contacto', service: 'Servicio',
+      route: 'Ruta', date: 'Fecha', people: 'Personas', msg: 'Mensaje', sent: 'Enviado desde vantourbogota.com',
+      subject: 'Solicitud de cotización · ',
+      months: ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic']
+    },
+    en: {
+      svc: { aeropuerto: 'Airport transfer', ejecutivo: 'Executive transport', tour: 'Tourist tour', grupo: 'Large group (15+ people)' },
+      hi: 'Hello! I would like to request a quote.', name: 'Name', contact: 'Contact', service: 'Service',
+      route: 'Route', date: 'Date', people: 'People', msg: 'Message', sent: 'Sent from vantourbogota.com',
+      subject: 'Quote request · ',
+      months: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     }
-  }
-
-  function showToast(msg) {
-    const t = document.createElement('div');
-    t.textContent = msg;
-    t.style.cssText = [
-      'position:fixed','bottom:90px','left:50%','transform:translateX(-50%)',
-      'background:#1F1F1F','border:0.5px solid rgba(200,169,110,0.35)',
-      'color:#fff','padding:10px 20px','border-radius:8px',
-      'font-size:0.85rem','z-index:3000','white-space:nowrap',
-      'box-shadow:0 4px 16px rgba(0,0,0,0.4)','transition:opacity 0.3s'
-    ].join(';');
-    document.body.appendChild(t);
-    setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 3500);
-  }
+  }[lang];
 
   function buildWAMessage(nombre, contacto, servicio, ruta, fecha, personas, mensaje) {
-    const svcMap = {
-      aeropuerto: 'Traslado aeropuerto',
-      ejecutivo:  'Transporte ejecutivo',
-      tour:       'Tour turístico',
-      grupo:      'Grupo grande (15+ personas)'
-    };
-    let msg = '¡Hola! Quiero solicitar una cotización.\n\n';
-    msg += '👤 *Nombre:* ' + nombre + '\n';
-    msg += '📞 *Contacto:* ' + contacto + '\n';
-    msg += '🚐 *Servicio:* ' + (svcMap[servicio] || servicio) + '\n';
-    if (ruta)     msg += '📍 *Ruta:* ' + ruta + '\n';
-    if (fecha)    msg += '📅 *Fecha:* ' + formatFecha(fecha) + '\n';
-    if (personas) msg += '👥 *Personas:* ' + personas + '\n';
-    if (mensaje)  msg += '💬 *Mensaje:* ' + mensaje + '\n';
-    msg += '\n_Enviado desde vantourbogota.com_';
+    let msg = TXT.hi + '\n\n';
+    msg += '👤 *' + TXT.name + ':* ' + nombre + '\n';
+    msg += '📞 *' + TXT.contact + ':* ' + contacto + '\n';
+    msg += '🚐 *' + TXT.service + ':* ' + (TXT.svc[servicio] || servicio) + '\n';
+    if (ruta)     msg += '📍 *' + TXT.route + ':* ' + ruta + '\n';
+    if (fecha)    msg += '📅 *' + TXT.date + ':* ' + formatFecha(fecha) + '\n';
+    if (personas) msg += '👥 *' + TXT.people + ':* ' + personas + '\n';
+    if (mensaje)  msg += '💬 *' + TXT.msg + ':* ' + mensaje + '\n';
+    msg += '\n_' + TXT.sent + '_';
     return msg;
   }
 
   function formatFecha(fechaISO) {
     if (!fechaISO) return '';
     const [y, m, d] = fechaISO.split('-');
-    const meses = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
-    return d + ' ' + (meses[parseInt(m, 10) - 1] || m) + ' ' + y;
+    return d + ' ' + (TXT.months[parseInt(m, 10) - 1] || m) + ' ' + y;
   }
 
   function shakeForm() {
