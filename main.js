@@ -6,6 +6,7 @@
   /* ---- LANGUAGE ----
      Cada idioma tiene su propia URL (/ = ES, /en/ = EN) con el texto ya en el HTML.
      La detección automática solo actúa en la primera visita a la raíz. */
+  const track = (name, params) => { if (window.vtTrack) window.vtTrack(name, params); };
   const lang = document.documentElement.lang === 'en' ? 'en' : 'es';
   const isBot = /bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent) || navigator.webdriver;
 
@@ -132,6 +133,8 @@
       // Guardar en variable global para que los botones del modal la usen
       pendingData = { nombre, contacto, servicio, ruta, fecha, personas, mensaje, msgTexto };
 
+      track('generate_lead', { service: servicio, people: personas || '' });
+
       // Resetear formulario y mostrar modal de selección de canal
       form.reset();
       if (success) {
@@ -171,6 +174,7 @@
   if (btnWA) {
     btnWA.addEventListener('click', () => {
       if (!pendingData) return;
+      track('whatsapp_click', { location: 'form_modal' });
       const url = 'https://wa.me/573153934336?text=' + encodeURIComponent(pendingData.msgTexto);
       window.open(url, '_blank');
       closeChannelModal();
@@ -182,6 +186,7 @@
       if (!pendingData) return;
       const subject = TXT.subject + pendingData.nombre;
       const body = pendingData.msgTexto.replace(/\*/g, ''); // quitar formato WA
+      track('email_click', { location: 'form_modal' });
       const url = 'mailto:vantourbogota@gmail.com'
         + '?subject=' + encodeURIComponent(subject)
         + '&body='    + encodeURIComponent(body);
