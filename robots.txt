@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: confirmar el dominio definitivo (.com) antes de publicar
+Sitemap: https://vantourbogota.com/sitemap.xml
