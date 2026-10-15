@@ -131,6 +131,15 @@
     });
   });
 
+  // Los enlaces del blog llegan con ?servicio=tour&ruta=Villa de Leyva para prellenar el formulario
+  if (form) {
+    const qs = new URLSearchParams(location.search);
+    const svc = qs.get('servicio');
+    const rt = qs.get('ruta');
+    if (svc && Array.from(form.servicio.options).some(o => o.value === svc)) form.servicio.value = svc;
+    if (rt) form.ruta.value = (svc === 'aeropuerto' ? '' : 'Bogotá → ') + rt.slice(0, 80);
+  }
+
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
