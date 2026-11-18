@@ -251,14 +251,14 @@
     es: {
       svc: { aeropuerto: 'Traslado aeropuerto', ejecutivo: 'Transporte ejecutivo', tour: 'Tour turístico', grupo: 'Grupo grande (15+ personas)' },
       hi: '¡Hola! Quiero solicitar una cotización.', name: 'Nombre', contact: 'Contacto', service: 'Servicio',
-      route: 'Ruta', date: 'Fecha', people: 'Personas', msg: 'Mensaje', sent: 'Enviado desde vantourbogota.com',
+      route: 'Ruta', date: 'Fecha', people: 'Personas', msg: 'Mensaje', sent: 'Enviado desde bogotavantour.vercel.app',
       subject: 'Solicitud de cotización · ',
       months: ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic']
     },
     en: {
       svc: { aeropuerto: 'Airport transfer', ejecutivo: 'Executive transport', tour: 'Tourist tour', grupo: 'Large group (15+ people)' },
       hi: 'Hello! I would like to request a quote.', name: 'Name', contact: 'Contact', service: 'Service',
-      route: 'Route', date: 'Date', people: 'People', msg: 'Message', sent: 'Sent from vantourbogota.com',
+      route: 'Route', date: 'Date', people: 'People', msg: 'Message', sent: 'Sent from bogotavantour.vercel.app',
       subject: 'Quote request · ',
       months: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     }

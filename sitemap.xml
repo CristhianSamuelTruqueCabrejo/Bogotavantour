@@ -1,114 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: confirmar el dominio definitivo (.com) y actualizar lastmod al publicar -->
+<!-- TODO: si se compra un dominio propio, reemplazar bogotavantour.vercel.app; actualizar lastmod al publicar -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://vantourbogota.com/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/" />
+    <loc>https://bogotavantour.vercel.app/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/" />
+    <loc>https://bogotavantour.vercel.app/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/blog/</loc>
+    <loc>https://bogotavantour.vercel.app/blog/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/en/blog/</loc>
+    <loc>https://bogotavantour.vercel.app/en/blog/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/blog/bogota-villa-de-leyva-en-van/</loc>
+    <loc>https://bogotavantour.vercel.app/blog/bogota-villa-de-leyva-en-van/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/bogota-villa-de-leyva-en-van/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/bogota-to-villa-de-leyva-by-van/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/bogota-villa-de-leyva-en-van/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/bogota-villa-de-leyva-en-van/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/bogota-to-villa-de-leyva-by-van/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/bogota-villa-de-leyva-en-van/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/en/blog/bogota-to-villa-de-leyva-by-van/</loc>
+    <loc>https://bogotavantour.vercel.app/en/blog/bogota-to-villa-de-leyva-by-van/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/bogota-villa-de-leyva-en-van/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/bogota-to-villa-de-leyva-by-van/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/bogota-villa-de-leyva-en-van/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/bogota-villa-de-leyva-en-van/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/bogota-to-villa-de-leyva-by-van/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/bogota-villa-de-leyva-en-van/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/blog/laguna-de-guatavita-como-llegar-desde-bogota/</loc>
+    <loc>https://bogotavantour.vercel.app/blog/laguna-de-guatavita-como-llegar-desde-bogota/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/laguna-de-guatavita-como-llegar-desde-bogota/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/guatavita-lake-how-to-get-there-from-bogota/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/laguna-de-guatavita-como-llegar-desde-bogota/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/laguna-de-guatavita-como-llegar-desde-bogota/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/guatavita-lake-how-to-get-there-from-bogota/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/laguna-de-guatavita-como-llegar-desde-bogota/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/en/blog/guatavita-lake-how-to-get-there-from-bogota/</loc>
+    <loc>https://bogotavantour.vercel.app/en/blog/guatavita-lake-how-to-get-there-from-bogota/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/laguna-de-guatavita-como-llegar-desde-bogota/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/guatavita-lake-how-to-get-there-from-bogota/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/laguna-de-guatavita-como-llegar-desde-bogota/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/laguna-de-guatavita-como-llegar-desde-bogota/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/guatavita-lake-how-to-get-there-from-bogota/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/laguna-de-guatavita-como-llegar-desde-bogota/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/blog/catedral-de-sal-zipaquira-desde-bogota/</loc>
+    <loc>https://bogotavantour.vercel.app/blog/catedral-de-sal-zipaquira-desde-bogota/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/catedral-de-sal-zipaquira-desde-bogota/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/zipaquira-salt-cathedral-from-bogota/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/catedral-de-sal-zipaquira-desde-bogota/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/catedral-de-sal-zipaquira-desde-bogota/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/zipaquira-salt-cathedral-from-bogota/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/catedral-de-sal-zipaquira-desde-bogota/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/en/blog/zipaquira-salt-cathedral-from-bogota/</loc>
+    <loc>https://bogotavantour.vercel.app/en/blog/zipaquira-salt-cathedral-from-bogota/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/catedral-de-sal-zipaquira-desde-bogota/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/zipaquira-salt-cathedral-from-bogota/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/catedral-de-sal-zipaquira-desde-bogota/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/catedral-de-sal-zipaquira-desde-bogota/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/zipaquira-salt-cathedral-from-bogota/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/catedral-de-sal-zipaquira-desde-bogota/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/blog/transporte-aeropuerto-el-dorado-bogota/</loc>
+    <loc>https://bogotavantour.vercel.app/blog/transporte-aeropuerto-el-dorado-bogota/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/transporte-aeropuerto-el-dorado-bogota/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/el-dorado-airport-transport-bogota/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/transporte-aeropuerto-el-dorado-bogota/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/transporte-aeropuerto-el-dorado-bogota/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/el-dorado-airport-transport-bogota/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/transporte-aeropuerto-el-dorado-bogota/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/en/blog/el-dorado-airport-transport-bogota/</loc>
+    <loc>https://bogotavantour.vercel.app/en/blog/el-dorado-airport-transport-bogota/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/transporte-aeropuerto-el-dorado-bogota/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/el-dorado-airport-transport-bogota/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/transporte-aeropuerto-el-dorado-bogota/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/transporte-aeropuerto-el-dorado-bogota/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/el-dorado-airport-transport-bogota/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/transporte-aeropuerto-el-dorado-bogota/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/blog/bogota-guatape-como-ir/</loc>
+    <loc>https://bogotavantour.vercel.app/blog/bogota-guatape-como-ir/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/bogota-guatape-como-ir/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/bogota-to-guatape-how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/bogota-guatape-como-ir/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/bogota-guatape-como-ir/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/bogota-to-guatape-how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/bogota-guatape-como-ir/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/en/blog/bogota-to-guatape-how-to-get-there/</loc>
+    <loc>https://bogotavantour.vercel.app/en/blog/bogota-to-guatape-how-to-get-there/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/bogota-guatape-como-ir/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/bogota-to-guatape-how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/bogota-guatape-como-ir/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/bogota-guatape-como-ir/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/bogota-to-guatape-how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/bogota-guatape-como-ir/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/blog/bogota-eje-cafetero-como-ir/</loc>
+    <loc>https://bogotavantour.vercel.app/blog/bogota-eje-cafetero-como-ir/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/bogota-eje-cafetero-como-ir/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/bogota-to-coffee-region-how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/bogota-eje-cafetero-como-ir/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/bogota-eje-cafetero-como-ir/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/bogota-to-coffee-region-how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/bogota-eje-cafetero-como-ir/" />
   </url>
   <url>
-    <loc>https://vantourbogota.com/en/blog/bogota-to-coffee-region-how-to-get-there/</loc>
+    <loc>https://bogotavantour.vercel.app/en/blog/bogota-to-coffee-region-how-to-get-there/</loc>
     <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://vantourbogota.com/blog/bogota-eje-cafetero-como-ir/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://vantourbogota.com/en/blog/bogota-to-coffee-region-how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vantourbogota.com/blog/bogota-eje-cafetero-como-ir/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bogotavantour.vercel.app/blog/bogota-eje-cafetero-como-ir/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bogotavantour.vercel.app/en/blog/bogota-to-coffee-region-how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bogotavantour.vercel.app/blog/bogota-eje-cafetero-como-ir/" />
   </url>
 </urlset>

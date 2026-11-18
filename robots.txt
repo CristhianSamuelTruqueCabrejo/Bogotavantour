@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# TODO: confirmar el dominio definitivo (.com) antes de publicar
-Sitemap: https://vantourbogota.com/sitemap.xml
+# TODO: si se compra un dominio propio, reemplazar bogotavantour.vercel.app
+Sitemap: https://bogotavantour.vercel.app/sitemap.xml
